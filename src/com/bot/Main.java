@@ -50,7 +50,9 @@ public class Main {
                 if ((X>0)&&(Y>0)) {
                     Line b = new Line(X, Y);
                     points.add(b);
-                    b.setBounds(0, (int)Math.round(b.b),(int)Math.round((height-b.b)/(b.k)), (int)Math.round(height-b.b));
+                    double[] arr=new double[4];
+                    arr=Line.getEndpoints(b.k,b.b);
+                    b.setBounds((int)Math.round(arr[0]), (int)Math.round(arr[1]), (int)Math.round(arr[2]), (int)Math.round(arr[3]));
                     pointpane.add(b);
                     pointpane.repaint();
                 }
