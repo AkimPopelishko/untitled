@@ -30,17 +30,17 @@ public class Main {
         Y.setBounds(2,45,75,25);
         butPanel.add(Y);
         final JTextField x = new JTextField();
-        x.setBackground(Color.yellow);
+        x.setBackground(Color.cyan);
         x.setBounds(140,25, 100,25);
         butPanel.add(x);
         final JTextField y = new JTextField();
         y.setBounds(70,50, 100,25);
-        y.setBackground(Color.yellow);
+        y.setBackground(Color.magenta);
         butPanel.add(y);
 
         JButton button1 = new JButton("Добавить прямую");
         button1.setBounds(2,100,160,40);
-        button1.setBackground(Color.yellow);
+        button1.setBackground(Color.orange);
         butPanel.add(button1);
         button1.addActionListener(new ActionListener(){
             @Override
@@ -60,7 +60,7 @@ public class Main {
             }
         });
         JButton button2 = new JButton("очистить");
-        button2.setBackground(Color.yellow);
+        button2.setBackground(Color.lightGray);
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
