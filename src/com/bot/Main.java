@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
     public static int width=1500;
@@ -47,15 +48,26 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 double X = (!x.getText().equals("")?Double.parseDouble(x.getText()):0);
                 double Y= (!y.getText().equals("")?Double.parseDouble(y.getText()):0);
-                if ((X>0)&&(Y>0)) {
+                //if ((X>0)&&(Y>0)) {
                     Line b = new Line(X, Y);
                     points.add(b);
                     double[] arr=new double[4];
                     arr=Line.getEndpoints(b.k,b.b);
-                    b.setBounds((int)Math.round(arr[0]), (int)Math.round(arr[1]), (int)Math.round(arr[2]), (int)Math.round(arr[3]));
+                   /* System.out.println(Arrays.toString(arr));
+                    System.out.println(Arrays.toString(new int[]{
+                            Math.min((int)Math.round(arr[0]),(int)Math.round(arr[2])),
+                            Math.min((int)Math.round(arr[1]),(int)Math.round(arr[3])),
+                            Math.max((int)Math.round(arr[0]),(int)Math.round(arr[2])),
+                            Math.max((int)Math.round(arr[1]),(int)Math.round(arr[3]))
+                    }));*/
+
+                    b.setBounds(Math.min((int)Math.round(arr[0]),(int)Math.round(arr[2])),
+                            Math.min((int)Math.round(arr[1]),(int)Math.round(arr[3])),
+                            Math.max((int)Math.round(arr[0]),(int)Math.round(arr[2])),
+                            Math.max((int)Math.round(arr[1]),(int)Math.round(arr[3])));
                     pointpane.add(b);
                     pointpane.repaint();
-                }
+                //}
 
             }
         });
